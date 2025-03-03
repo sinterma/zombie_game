@@ -9,29 +9,29 @@
   </head>
   <body>
     <main>
-      <div id="game-intro"></div>
-        <img src = "./images/zombie_logo.png" alt = "logo" class = "logo-img" />
-        <br />
-        <button id = "start-button"> Start Game</button>
-        <p>Guide your movement with the up and down arrow keys!</p>
-        <img src ="./images/Up_down.png" alt ="Control keys Up and Down" class = "keys-img" />
-      </div>
+        <div id="game-intro">
+            <img src="./images/zombie_logo.png" alt="logo" class="logo-img" />
+            <br />
+            <button id="start-button">Start Game</button>
+            <p>Guide your movement with the up and down arrow keys!</p>
+            <img src="./images/Up_down.png" alt="Control keys Up and Down" class="keys-img" />
+         </div>
         
-      <div id="game-container">
-        <div>
-            <h3>Stats</h3>
-            <p>Score: <span id = "score">0</span></p>
-            <p>Lives: <span id = "lives">5</span></p>
-        </div>
-        <div id = "game-screen"></div>
-      </div>
+         <div id="game-container">
+            <div>
+               <h3>Progress</h3>
+               <p>Score: <span id="score">0</span></p>
+               <p>Lives: <span id="lives">5</span></p>
+            </div>
+            <div id="game-screen"></div>
+         </div>
 
-      <div id="game-end"></div>
-        <img src="./images/game_over.png" alt="Game Over" class ="gameOver-img" />
-        <h2>Game Over</h2>
-        <br />
-        <button id = "restart-button">Restart Game</button>
-      </div> 
+         <div id="game-end">
+            <img src="./images/game_over.png" alt="Game Over" class="gameOver-img" />
+            <h2>Game Over</h2>
+            <br />
+            <button id="restart-button">Restart Game</button>
+         </div>
     </main>
     <script type="text/javascript" src="js/obstacle.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
