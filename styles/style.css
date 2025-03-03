@@ -9,6 +9,7 @@ body {
   
   #game-intro {
     padding: 0px 0px;
+   
   }
   
   #game-container {
@@ -26,21 +27,16 @@ body {
   
   #game-screen {
     display: none;
-    width: 1200px; /* Фиксированная ширина, как в JS */
-    height: 800px; /* Фиксированная высота */
+    width: 1675px; /* Фиксированная ширина, как в JS */
+    height: 720px; /* Фиксированная высота */
     margin: auto; /* Центрируем */
     overflow: hidden;
     position: relative;
     background-image: url(../images/zombie_bg.png);
     background-size: cover;
-    background-position: center; /* Центрируем фон */
-   /* display: none; 
-    align-content: center;
-    padding: 20px 0px;
+    padding: 0px;
     overflow: hidden;
-    position: relative;
-    background-image: url(../images/zombie_bg.png);
-    background-size: cover; */
+    
   
   }
   
