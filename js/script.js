@@ -8,6 +8,33 @@ window.onload = function () {
       startGame();
         
     });
+
+    window.addEventListener('keydown', (event)=> {
+        if(event.code === 'ArrowUp') {
+            ourNewGame.player.directionY = -1;
+
+        }
+
+        else if (event.code === 'ArrowDown') {
+            ourNewGame.player.directionY =1;
+        }
+
+    });
+
+    window.addEventListener('keyup', (event) => {
+        if(event.code === 'ArrowUp') {
+        ourNewGame.player.directionY = 0;
+
+        }
+
+        else if (event.code === 'ArrowDown') {
+            ourNewGame.player.directionY = 0;
+        }
+    });
+
+
+
+
     function startGame () {
         console.log("start game");
         ourNewGame.start()

@@ -21,10 +21,11 @@ class Player {
     move () {
         this.positionLeft += this.directionX;
         this.positionTop += this.directionY;
+        this.updatePosition();
 
     }
     updatePosition () {
-        tthis.element.style.top = `${this.positionTop}px`;
+        this.element.style.top = `${this.positionTop}px`;
         this.element.style.left = `${this.positionLeft}px`
 
     }
