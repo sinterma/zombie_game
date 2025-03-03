@@ -27,30 +27,18 @@ body {
   
   #game-screen {
     display: none;
-    width: 1675px; /* Фиксированная ширина, как в JS */
-    height: 720px; /* Фиксированная высота */
-    margin: auto; /* Центрируем */
+    width: 1675px; 
+    height: 720px;
+    margin: auto; 
     overflow: hidden;
     position: relative;
     background-image: url(../images/zombie_bg.png);
     background-size: cover;
     padding: 0px;
     overflow: hidden;
-    
   
   }
   
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
   
   #game-end {
     display: none;
