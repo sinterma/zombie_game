@@ -3,6 +3,8 @@ class Game {
         this.startScreen = document.getElementById('game-intro');
         this.gameScreen = document.getElementById('game-screen');
         this.gameOverScreen = document.getElementById('game-end');
+        this.scoreElement = document.getElementById("score");
+        this.livesElement = document.getElementById("lives");
         this.player = new Player (this.gameScreen, 70, 500, 200, 200, "images/main_character.png");
         this.height = 720;
         this.width = 1675;
@@ -11,7 +13,9 @@ class Game {
         this.lives = 5;
         this.gameIsOver = false; 
         this.gameIntervalId = null;
-        this.gameLoopFrequency = (1000/60)
+        this.gameLoopFrequency = (1000/60);
+        this.obstacleIntervalNormal = null;
+        this.obstacleIntervalBird = null;
 
     }
     start() {
@@ -24,24 +28,59 @@ class Game {
         this.gameIntervalId = setInterval(() => {
         this.gameLoop(); 
         },  this.gameLoopFrequency); 
-        
-        
+
+        if (this.obstacleIntervalNormal) clearInterval(this.obstacleIntervalNormal);
+        if (this.obstacleIntervalBird) clearInterval(this.obstacleIntervalBird);
+
+        this.obstacleIntervalNormal = setInterval(() => {
+            this.addObstacle("normal");
+        }, Math.random() * 4000 + 1500);
+
+        // Зомби-птицы каждые 5 секунд
+        this.obstacleIntervalBird = setInterval(() => {
+            this.addObstacle("zombie_bird");
+        }, 6000);
+   
     }
 
+    addObstacle(type) {
+        this.obstacles.push(new Obstacle(this.gameScreen, type, this.height));
+    }
+
+
     gameLoop() {
-      console.log("game loop");
+      console.log("game loop, obstacles count:", this.obstacles.length);
       this.update();
       if(this.gameIsOver) {
         clearInterval(this.gameIntervalId)
+        clearInterval(this.obstacleIntervalNormal);
+        clearInterval(this.obstacleIntervalBird);
+        }
       }
-}
+
     update (){
         this.player.move();
+        this.obstacles.forEach((obstacle, index) => {
+            obstacle.move();
 
+            if (obstacle.isOutOfScreen()) {
+                this.score++;
+                document.getElementById('score').innerText = this.score; 
+                obstacle.remove();
+                this.obstacles.splice(index, 1);
+                
+            }
+
+            if (this.player.didCollide(obstacle)) {
+                console.log("Player hit a zombie!");
+                obstacle.remove();
+                this.obstacles.splice(index, 1);
+                this.lives --
+                this.livesElement.innerText = this.lives;
+            }
+        });
+
+            
+    }
 }
-}
-
-
-
-
-
+            
