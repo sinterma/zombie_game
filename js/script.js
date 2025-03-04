@@ -35,6 +35,15 @@ window.onload = function () {
         else if (event.code === 'ArrowDown') {
             ourNewGame.player.directionY = 0;
         }
+
+        else if (event.code === 'Space') {
+            const weapon = new Weapon(
+                ourNewGame.gameScreen,
+                ourNewGame.player.positionLeft + ourNewGame.player.playerWidth, // Начинается справа от игрока
+                ourNewGame.player.positionTop + ourNewGame.player.playerHeight / 2 // По центру высоты игрока
+            );
+            ourNewGame.weapon.push(weapon);
+        }
     });
 
 
