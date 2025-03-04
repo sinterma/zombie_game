@@ -18,12 +18,24 @@ class Player {
         this.gameScreen.appendChild(this.element);
 
     }
-    move () {
+    move() {
         this.positionLeft += this.directionX;
         this.positionTop += this.directionY;
+    
+        // Ограничение сверху
+        if (this.positionTop < 0) {
+            this.positionTop = 0;
+        }
+    
+        // Ограничение снизу
+        if (this.positionTop + this.playerHeight > this.gameScreen.clientHeight) {
+            this.positionTop = this.gameScreen.clientHeight - this.playerHeight;
+        }
+    
         this.updatePosition();
-
     }
+
+    
     updatePosition () {
         this.element.style.top = `${this.positionTop}px`;
         this.element.style.left = `${this.positionLeft}px`
@@ -33,8 +45,9 @@ class Player {
     didCollide (obstacles) {
 
     }
-
-
-
-
 }
+
+
+
+
+

@@ -11,12 +11,12 @@ window.onload = function () {
 
     window.addEventListener('keydown', (event)=> {
         if(event.code === 'ArrowUp') {
-            ourNewGame.player.directionY = -1;
+            ourNewGame.player.directionY = -5;
 
         }
 
         else if (event.code === 'ArrowDown') {
-            ourNewGame.player.directionY =1;
+            ourNewGame.player.directionY = 5;
         }
 
     });
