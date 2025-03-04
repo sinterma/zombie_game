@@ -62,6 +62,10 @@ body {
   .keys-img {
     width: 200px;
   }
+
+  .gameOver-img {
+    width: 450px;
+  }
   
   body button {
         font-size: 30px;

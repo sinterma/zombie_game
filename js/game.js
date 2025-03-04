@@ -10,7 +10,7 @@ class Game {
         this.width = 1675;
         this.obstacles = [];
         this.score = 0;
-        this.lives = 5;
+        this.lives = 1;
         this.gameIsOver = false; 
         this.gameIntervalId = null;
         this.gameLoopFrequency = (1000/60);
@@ -52,35 +52,48 @@ class Game {
       console.log("game loop, obstacles count:", this.obstacles.length);
       this.update();
       if(this.gameIsOver) {
-        clearInterval(this.gameIntervalId)
         clearInterval(this.obstacleIntervalNormal);
         clearInterval(this.obstacleIntervalBird);
+        this.gameOver();
         }
       }
 
     update (){
         this.player.move();
-        this.obstacles.forEach((obstacle, index) => {
+        this.obstacles.forEach((obstacle, i) => {
             obstacle.move();
 
             if (obstacle.isOutOfScreen()) {
                 this.score++;
                 document.getElementById('score').innerText = this.score; 
                 obstacle.remove();
-                this.obstacles.splice(index, 1);
+                this.obstacles.splice(i, 1);
+                i --;
                 
             }
 
             if (this.player.didCollide(obstacle)) {
                 console.log("Player hit a zombie!");
                 obstacle.remove();
-                this.obstacles.splice(index, 1);
+                this.obstacles.splice(i, 1);
+                i--;
                 this.lives --
                 this.livesElement.innerText = this.lives;
+                if (this.lives === 0) {
+                    this.gameIsOver = true;
+
+                }
             }
         });
 
             
+    }
+
+    gameOver() {
+        clearInterval(this.gameIntervalId);
+        this.gameScreen.style.display='none';
+        this.gameOverScreen.style.display='block';
+
     }
 }
             

@@ -9,6 +9,11 @@ window.onload = function () {
         
     });
 
+    restartButtonElement.addEventListener("click", ()=> {
+        window.location.reload ()
+
+    });
+
     window.addEventListener('keydown', (event)=> {
         if(event.code === 'ArrowUp') {
             ourNewGame.player.directionY = -5;
