@@ -2,10 +2,17 @@ window.onload = function () {
     const startButtonElement = document.getElementById("start-button");
     const restartButtonElement = document.getElementById("restart-button");
     let ourNewGame
+    let introMusic = new Audio("assets/intro.mp3");
+    introMusic.volume = 0.3;
+    introMusic.loop = true; 
+    introMusic.play();
    
     startButtonElement.addEventListener("click", function () {
+    
       ourNewGame = new Game ();
+      introMusic.pause();
       startGame();
+    
         
     });
 

@@ -6,6 +6,8 @@ class Weapon {
         this.height = 35;
         this.element = document.createElement("img");
         this.element.src = "images/fire.png";
+        this.death = new Audio("assets/death.mp3");
+        this.death.volume = 0.5;
         this.element.style.position ='absolute';
         this.element.style.top = `${this.top}px`;
         this.element.style.left = `${this.left}px`;
@@ -45,6 +47,7 @@ class Weapon {
           weaponRect.top < obstacleRect.bottom &&
           weaponRect.bottom > obstacleRect.top
         ) {
+          this.death.play();
           return true;
         } else {
           return false;

@@ -6,6 +6,8 @@ class Player {
         this.positionTop = positionTop;
         this.playerWidth = playerWidth;
         this.playerHeight = playerHeight;
+        this.meow = new Audio("assets/meow.mp3");
+        this.meow.volume = 1;
         this.directionX = 0;
         this.directionY = 0;
         this.element = document.createElement('img');
@@ -22,12 +24,10 @@ class Player {
         this.positionLeft += this.directionX;
         this.positionTop += this.directionY;
     
-        // Ограничение сверху
         if (this.positionTop < 0) {
             this.positionTop = 0;
         }
     
-        // Ограничение снизу
         if (this.positionTop + this.playerHeight > this.gameScreen.clientHeight) {
             this.positionTop = this.gameScreen.clientHeight - this.playerHeight;
         }
@@ -52,6 +52,7 @@ class Player {
           playerRect.top < obstacleRect.bottom &&
           playerRect.bottom > obstacleRect.top
         ) {
+          this.meow.play();
           return true;
         } else {
           return false;
