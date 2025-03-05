@@ -60,8 +60,25 @@ body {
   }
 
   #restart-button {
-    margin: 60px
+    margin: 60px;
+    font-size: 30px;
+    font-family: 'Creepster'; 
+    background-color: #521414; 
+    color: #ffffff;
+    padding: 15px 40px;
+    border: 3px solid #102a21; 
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(215, 40, 40, 0.8);
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    transition: 0.3s;
   }
+
+  #restart-button:hover {
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #007700;
+    text-shadow: 0 0 10px #ede9e9; 
+    transform: rotate(-2deg) scale(1.05); 
+}
   
   .logo-img {
     width: 350px;
@@ -80,7 +97,7 @@ body {
     margin: 40px 0px 0px 0px;
   }
   
-  body button {
+  #start-button {
         font-size: 30px;
         font-family: 'Creepster'; 
         background-color: #521414; 
@@ -94,8 +111,31 @@ body {
         transition: 0.3s;
     }
     
-    button:hover {
+    #start-button:hover {
         box-shadow: 0 0 20px #00ff00, 0 0 40px #007700;
         text-shadow: 0 0 10px #ede9e9; 
         transform: rotate(-2deg) scale(1.05); 
     }
+
+  #play-music-button {
+    font-size: 15px;
+        font-family: 'Creepster'; 
+        background-color: #521414; 
+        color: #ffffff;
+        padding: 10px 15px;
+        border: 3px solid #102a21; 
+        border-radius: 0px;
+        box-shadow: 0 0 15px rgba(215, 40, 40, 0.8);
+        text-shadow: 2px 2px 5px black;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute; 
+        top: 15px; 
+        left: 10px;
+    }
+
+    #play-music-button:hover {
+      box-shadow: 0 0 20px #00ff00, 0 0 40px #007700;
+      text-shadow: 0 0 10px #ede9e9; 
+      transform: rotate(-2deg) scale(1.05); 
+  }

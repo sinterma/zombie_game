@@ -1,16 +1,20 @@
 window.onload = function () {
     const startButtonElement = document.getElementById("start-button");
     const restartButtonElement = document.getElementById("restart-button");
+    const playMusicButton = document.getElementById("play-music-button");
+    
     let ourNewGame
     let introMusic = new Audio("assets/intro.mp3");
     introMusic.volume = 0.3;
     introMusic.loop = true; 
-    introMusic.play();
+
+    
+    let isMuted = true
    
     startButtonElement.addEventListener("click", function () {
     
       ourNewGame = new Game ();
-      introMusic.pause();
+      introMusic.pause()
       startGame();
     
         
@@ -20,6 +24,23 @@ window.onload = function () {
         window.location.reload ()
 
     });
+
+    playMusicButton.textContent = "Play Music";
+
+    playMusicButton.addEventListener("click", function () {
+        if (isMuted) {
+            introMusic.play();
+            playMusicButton.textContent = "Mute Music"; 
+            isMuted = false;
+        } else {
+            introMusic.pause(); 
+            introMusic.currentTime = 0; 
+            playMusicButton.textContent = "Play Music"; 
+            isMuted = true;
+        }
+    });
+
+    
 
     window.addEventListener('keydown', (event)=> {
         if(event.code === 'ArrowUp') {
@@ -46,8 +67,8 @@ window.onload = function () {
         else if (event.code === 'Space') {
             const weapon = new Weapon(
                 ourNewGame.gameScreen,
-                ourNewGame.player.positionLeft + ourNewGame.player.playerWidth, // Начинается справа от игрока
-                ourNewGame.player.positionTop + ourNewGame.player.playerHeight / 2 // По центру высоты игрока
+                ourNewGame.player.positionLeft + ourNewGame.player.playerWidth,
+                ourNewGame.player.positionTop + ourNewGame.player.playerHeight / 2 
             );
             ourNewGame.weapon.push(weapon);
         }
