@@ -22,7 +22,7 @@ class Game {
         this.gameOverMusic.volume = 0.4;
         this.gameOverMusic.loop = true; 
         this.gameOverSound = new Audio ("assets/game-over.mp3");
-        this.gameOverSound.volume = 0.3;
+        this.gameOverSound.volume = 0.1;
         this.gameIsOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = (1000 / 60);

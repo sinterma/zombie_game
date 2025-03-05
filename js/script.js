@@ -2,17 +2,21 @@ window.onload = function () {
     const startButtonElement = document.getElementById("start-button");
     const restartButtonElement = document.getElementById("restart-button");
     const playMusicButton = document.getElementById("play-music-button");
+
     
     let ourNewGame
     let introMusic = new Audio("assets/intro.mp3");
     introMusic.volume = 0.3;
     introMusic.loop = true; 
+    let playClickSound = new Audio("assets/click.mp3");
+    playClickSound.volume =0.3
+
 
     
     let isMuted = true
    
     startButtonElement.addEventListener("click", function () {
-    
+      playClickSound.play();
       ourNewGame = new Game ();
       introMusic.pause()
       startGame();
@@ -21,6 +25,7 @@ window.onload = function () {
     });
 
     restartButtonElement.addEventListener("click", ()=> {
+        playClickSound.play();
         window.location.reload ()
 
     });
@@ -28,6 +33,7 @@ window.onload = function () {
     playMusicButton.textContent = "Play Music";
 
     playMusicButton.addEventListener("click", function () {
+        playClickSound.play();
         if (isMuted) {
             introMusic.play();
             playMusicButton.textContent = "Mute Music"; 
