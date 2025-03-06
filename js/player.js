@@ -8,7 +8,6 @@ class Player {
     playerImageSrc
   ) {
     console.log(
-      "Создаём игрока...",
       gameScreen,
       positionLeft,
       positionTop,
