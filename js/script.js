@@ -11,6 +11,8 @@ window.onload = function () {
   playClickSound.volume = 0.3;
 
   let isMuted = true;
+  let canShoot = true;
+  const fireRate = 600;
 
   startButtonElement.addEventListener("click", function () {
     playClickSound.play();
@@ -53,13 +55,18 @@ window.onload = function () {
       ourNewGame.player.directionY = 0;
     } else if (event.code === "ArrowDown") {
       ourNewGame.player.directionY = 0;
-    } else if (event.code === "Space") {
+    } else if (event.code === "Space" && canShoot) {
+      canShoot = false;
       const weapon = new Weapon(
         ourNewGame.gameScreen,
         ourNewGame.player.positionLeft + ourNewGame.player.playerWidth,
         ourNewGame.player.positionTop + ourNewGame.player.playerHeight / 2
       );
       ourNewGame.weapon.push(weapon);
+
+      setTimeout(() => {
+        canShoot = true;
+      }, fireRate);
     }
   });
 

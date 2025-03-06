@@ -26,7 +26,7 @@ class Game {
     this.zombie.volume = 0.1;
     this.zombie.loop = true;
     this.gameOverMusic = new Audio("assets/game-over-music.mp3");
-    this.gameOverMusic.volume = 0.4;
+    this.gameOverMusic.volume = 0.2;
     this.gameOverMusic.loop = true;
     this.gameOverSound = new Audio("assets/game-over.mp3");
     this.gameOverSound.volume = 0.1;

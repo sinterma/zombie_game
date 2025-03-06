@@ -7,7 +7,7 @@ class Weapon {
     this.element = document.createElement("img");
     this.element.src = "images/fire.png";
     this.death = new Audio("assets/death.mp3");
-    this.death.volume = 0.5;
+    this.death.volume = 0.2;
     this.element.style.position = "absolute";
     this.element.style.top = `${this.top}px`;
     this.element.style.left = `${this.left}px`;
