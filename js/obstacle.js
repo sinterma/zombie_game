@@ -38,7 +38,7 @@ class Obstacle {
     this.left -= this.speed;
 
     if (this.type === "zombie_bird") {
-      this.top += Math.random() * 6 - 3; // Легкое покачивание вверх-вниз
+      this.top += Math.random() * 6 - 3; 
     }
 
     this.updatePosition();

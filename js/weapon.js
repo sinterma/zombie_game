@@ -26,7 +26,7 @@ class Weapon {
     this.element.style.top = `${this.top}px`;
   }
   isOutOfScreen() {
-    return this.left > window.innerWidth; // Если оружие ушло за экран - удалить
+    return this.left > window.innerWidth; 
   }
 
   remove() {

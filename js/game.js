@@ -80,12 +80,11 @@ class Game {
   update() {
     this.player.move();
 
-    // Обработка препятствий
+    
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
       obstacle.move();
 
-      // Препятствие выходит за пределы экрана
       if (obstacle.isOutOfScreen()) {
         this.lives--;
         this.livesElement.innerText = this.lives;
