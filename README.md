@@ -1,5 +1,5 @@
 # ZOMBIE HUNTER
-## [Play the Game] (https://sinterma.github.io/zombie_game/)
+## [Play the Game](https://sinterma.github.io/zombie_game/)
 
 #  Description
 
@@ -56,8 +56,8 @@ Weapons & Attacks:
 
 # Extra Links 
 
-### Slides 
-[Link] (https://docs.google.com/presentation/d/1yluZTpZI1gnP3bDSXilW54sv2fUrc8RtS_QswVMqsMw/edit?usp=sharing)
+### Slides
+[Link](https://docs.google.com/presentation/d/1yluZTpZI1gnP3bDSXilW54sv2fUrc8RtS_QswVMqsMw/edit?usp=sharing)
 
 ### Deploy
-[Link] (https://sinterma.github.io/zombie_game/)
+[Link](https://sinterma.github.io/zombie_game/)
